@@ -816,3 +816,14 @@ async function scrap_farmacias() {
        elemento.innerHTML += `<p>${farmacias[i]}</p>` 
     }
 }
+
+async function testAPInode(){
+    //http://localhost:5500/farmaciasdeturnovich
+    const request = await fetch('http://localhost:5500/farmaciasdeturnovich');
+    const response = await request.json();
+
+    console.log(response);
+
+    let elemento = document.getElementById('texto');
+    elemento.innerHTML = response;
+}
