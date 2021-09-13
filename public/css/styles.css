@@ -1,0 +1,289 @@
+html {
+    box-sizing: border-box;
+  }
+  *{
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+  }
+  *,
+  *:before,
+  *:after {
+    box-sizing: inherit;
+  }
+  
+  .texto-tiempo{
+    display: inline;
+  }
+  
+  /*Loader css*/
+  
+  
+  .lds-roller {
+    display: inline-block;
+    position: relative;
+    width: 80px;
+    height: 80px;
+  }
+  .lds-roller div {
+    animation: lds-roller 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+    transform-origin: 40px 40px;
+  }
+  .lds-roller div:after {
+    content: " ";
+    display: block;
+    position: absolute;
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: #000;
+    margin: -4px 0 0 -4px;
+  }
+  .lds-roller div:nth-child(1) {
+    animation-delay: -0.036s;
+  }
+  .lds-roller div:nth-child(1):after {
+    top: 63px;
+    left: 63px;
+  }
+  .lds-roller div:nth-child(2) {
+    animation-delay: -0.072s;
+  }
+  .lds-roller div:nth-child(2):after {
+    top: 68px;
+    left: 56px;
+  }
+  .lds-roller div:nth-child(3) {
+    animation-delay: -0.108s;
+  }
+  .lds-roller div:nth-child(3):after {
+    top: 71px;
+    left: 48px;
+  }
+  .lds-roller div:nth-child(4) {
+    animation-delay: -0.144s;
+  }
+  .lds-roller div:nth-child(4):after {
+    top: 72px;
+    left: 40px;
+  }
+  .lds-roller div:nth-child(5) {
+    animation-delay: -0.18s;
+  }
+  .lds-roller div:nth-child(5):after {
+    top: 71px;
+    left: 32px;
+  }
+  .lds-roller div:nth-child(6) {
+    animation-delay: -0.216s;
+  }
+  .lds-roller div:nth-child(6):after {
+    top: 68px;
+    left: 24px;
+  }
+  .lds-roller div:nth-child(7) {
+    animation-delay: -0.252s;
+  }
+  .lds-roller div:nth-child(7):after {
+    top: 63px;
+    left: 17px;
+  }
+  .lds-roller div:nth-child(8) {
+    animation-delay: -0.288s;
+  }
+  .lds-roller div:nth-child(8):after {
+    top: 56px;
+    left: 12px;
+  }
+  @keyframes lds-roller {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  .loader{
+      background: white;
+      width: 100%;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 100000;
+      clip-path: circle(150% at 100% 0);
+      transition: clip-path 0.8 ease-in-out;
+  }
+  .loader2{
+      clip-path: circle(0% at 100% 100%);
+  }
+  
+  /*fin loader css*/
+  
+  
+  .landing-page {
+    background-image: url("../img/bg_index.png");
+    background-size: cover;
+  }
+  #temp-actual-index,
+  #tituloCard {
+    font-weight: bold;
+    font-size: 18px;
+  }
+  /*Cards*/
+  #card1,
+  #card2,
+  #card3 {
+    margin-right: 50px;
+  }
+  #rowcard {
+    margin-top: 25px;
+  }
+  #map {
+    height: 700px;
+    width: 100%;
+  }
+  #fila1,
+  #fila2,
+  #fila3 {
+    margin-top: 20px;
+  }
+  #fila3 {
+    margin-bottom: 30px;
+  }
+  #hora-navbar {
+    margin: 10px;
+    padding: 10px;
+    color: white;
+    border: solid 2px white;
+    border-radius: 5px;
+    font-weight: 300;
+  }
+  #btn_tiempo:focus,
+  #btn_mapa:focus,
+  #btn_farmacias:focus,
+  #btn_rest:focus,
+  #btn_estaciones:focus,
+  #btn_hoteles:focus,
+  #btn-atras:focus {
+    -ms-transform: scale(1.14); /* IE 9 */
+    -webkit-transform: scale(1.14); /* Safari 3-8 */
+    transform: scale(1.14);
+  }
+  
+  .crd-tiempo-actual{
+    color: white;
+    /*font-family: 'Roboto', sans-serif;*/
+    width: 300px;
+    height: 380px;
+    background-image: url('https://activa.gualeguaychu.gov.ar/apps/activa/img/bg_azul.png');
+    background-size: cover;
+    border-radius: 10px;
+  }
+  .crd-header-tiempo{
+    text-align: center;
+    /*font-family: 'Roboto', sans-serif;*/
+    font-weight: bold;
+    font-size: 18pt;
+  }
+  
+  .line{
+    width: 250px;
+    height: 1px;
+    border-bottom: 1px solid white;
+    margin-left: 15px;
+  }
+  .line2{
+    width: 200px;
+    height: 1px;
+    border-bottom: 1px solid white;
+    margin-left: 15px;
+  }
+  
+  
+  td{
+    text-align: center;
+  }
+  .table .table-borderless{
+    width: 300px;
+    height: 300px;
+  }
+  /* #tabla-actual{
+    margin-top: 10px;
+    background-image: url('../img/bg_naranja.jpg'); 
+    border-radius: 10px; 
+    max-width: 20rem; 
+    max-height: 20rem;
+    min-width: 10rem;
+    min-height: 10rem; 
+    color: white; 
+    text-align: center;
+  } */
+  #contenedor-general{
+    background-color: white;
+    background-image: url('../img/bg_blue.jpg');
+    background-size: cover;
+    border-radius: 10px;
+    width: 70%;
+    margin-bottom: 10px;
+  }
+  .tabla-secundaria{
+    overflow-x:auto;
+    width: 240px;
+    height: 220px;
+    background-image: url('../img/bg_cardtiempo.png');
+    background-size:cover;
+    text-align: center !important;
+    color: white;
+    border-radius: 5px;
+    
+  }
+  .tabla-secundaria2{
+    overflow-x:auto;
+    width: 240px;
+    height: 220px;
+    background-image: url('../img/bg_naranja.jpg');
+    background-size:cover;
+    text-align: center !important;
+    color: white;
+    border-radius: 5px;
+  }
+  #tabla-actual2{
+    overflow-x:auto;
+    width: 240px;
+    height: 220px;
+    background-image: url('../img/bg_naranja.jpg');
+    background-size:cover;
+    text-align: center !important;
+    color: white;
+    border-radius: 5px;
+  }
+  .txt-crd-tiempo{
+    /*display: inline;*/
+    font-weight: 600 /*400?*/;
+    text-decoration: none /*underline?*/;
+  }
+  #contenedor-farmacias{
+    background-image: url('../img/bg_blue.jpg');
+    border-radius: 15px;
+  }
+  .carta-farmacia{
+    width: 16rem;
+    min-height: 9rem;
+    max-height: 12rem;
+    background-image: url('../img/bg_cardtiempo.png');
+    background-size:cover;
+    text-align: center;
+    border-radius: 5px;
+    color: white;
+    margin: 10px;
+  }
+  .info-farmacia{
+    margin-top: 15px;
+  }
+  .crd-farm-icon{
+    width: 25px;
+  }

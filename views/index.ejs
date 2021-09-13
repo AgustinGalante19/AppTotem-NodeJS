@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="icon" type="img/png" href="img/gchulogo.png">
+  <title>Inicio</title>
+</head>
+<!--  -->
+<body class="landing-page" onload="temperatura(), focus_selector(), hora_actual(), $('#onload').fadeOut()">
+  <!--Navbar-->
+  <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #007CFF; margin-bottom: 15px;">
+    <div class="container-fluid">
+      <a class="navbar-brand text-white" href="/">
+        <img src="img/gchulogo.png" width="18%" alt="">
+        Inicio
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link active text-white" aria-current="page" href="#">Ingresar a GualeActiva</a>
+          </li>
+        </ul>
+        <div class="position-absolute top-50 end-0 translate-middle-y">
+          <h4 id="hora-navbar"></h4>
+        </div>
+      </div>
+    </div>
+  </nav>
+  <!--CARDS-->
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-4">
+        <div class="card" style="width: 18rem;">
+          <img src="img/cardtiempov1.png" class="card-img-top">
+          <div class="card-body" id="probando">
+            <p id="temp-actual-index">
+              <!--Listo.-->
+            </p>
+            <p class="card-text">Click para mas informacion sobre el tiempo en Gualeguaychu.</p>
+            <div id="footer_hora" class="card-link"
+              style="background-color: #fff; border-style: none; font-size: 12px;">
+              <a class="btn btn-primary" id="btn_tiempo" href="">Ingresar</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-4">
+        <div class="card" style="width: 18rem;">
+          <img src="img/cardmapv1.png" class="card-img-top">
+          <div class="card-body">
+            <p id="tituloCard">Mapa
+              <!--Listo.-->
+            </p>
+            <p class="card-text">Click para ver un mapa de Gualeguaychu.</p>
+            <div id="footer_hora" class="card-link"
+              style="background-color: #fff; border-style: none; font-size: 12px;">
+              <a class="btn btn-primary" id="btn_mapa" href="">Ingresar</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row justify-content-center" style="margin-top: 20px;">
+      <div class="col-4">
+        <div class="card" style="width: 18rem;">
+          <img src="img/cardfarmaciasv1.png" class="card-img-top">
+          <div class="card-body">
+            <p id="tituloCard">Farmacias de turno
+              <script>
+                    //code...?
+              </script>
+            </p>
+            <p class="card-text">Click para ver la farmacias de turno.</p>
+            <div id="footer_hora" class="card-link"
+              style="background-color: #fff; border-style: none; font-size: 12px;">
+              <a class="btn btn-primary" id="btn_farmacias" href="">Ingresar</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-4">
+        <div class="card" style="width: 18rem;">
+          <img src="img/void.png" class="card-img-top">
+          <div class="card-body">
+            <p id="tituloCard">Restaurantes
+              <script>
+                    //code...?
+              </script>
+            </p>
+            <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+            <div id="footer_hora" class="card-link"
+              style="background-color: #fff; border-style: none; font-size: 12px;">
+              <a class="btn btn-primary" id="btn_rest" href="#">Ingresar</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row justify-content-center" id="fila3" style="margin-top: 20px;">
+      <div class="col-4">
+        <div class="card" style="width: 18rem;">
+          <img src="img/void.png" class="card-img-top">
+          <div class="card-body">
+            <p id="tituloCard">Estaciones de servicio
+              <script>
+                      //code...?
+              </script>
+            </p>
+            <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+            <div id="footer_hora" class="card-link"
+              style="background-color: #fff; border-style: none; font-size: 12px;">
+              <a class="btn btn-primary" id="btn_estaciones" href="#">Ingresar</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-4">
+        <div class="card" style="width: 18rem;">
+          <img src="img/void.png" class="card-img-top">
+          <div class="card-body">
+            <p id="tituloCard">Hoteles
+              <script>
+                    //code...?
+              </script>
+            </p>
+            <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+            <div id="footer_hora" class="card-link"
+              style="background-color: #fff; border-style: none; font-size: 12px;">
+              <a class="btn btn-primary" id="btn_hoteles" href="#">Ingresar</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row justify-content-end">
+    <div class="col-4">
+    <div class="card" style="width: 18rem;">
+      <div class="card-body">
+        <h5 class="card-title">Card title</h5>
+        <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+        <a href="#" class="card-link">Card link</a>
+        <a href="#" class="card-link">Another link</a>
+      </div>
+    </div>
+  </div>
+  </div>
+
+</div>
+
+  <!-- Loader -->
+  <div id="onload">
+    <div class="lds-roller loader" id="loader">
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+  </div>
+  <!--boostrap css import-->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"></script>
+    <!--Jquery import-->
+    <script type="text/javascript" src="js/jquery-3.6.0.min.js"></script>
+  <script src="js/app.js"></script>
+</body>
+
+</html>
