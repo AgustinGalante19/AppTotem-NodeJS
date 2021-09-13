@@ -16,6 +16,10 @@ app.get('/tiempo', (req, res) => {
     res.render('tiempo.ejs')
 });
 
+app.get('/mapa', (req, res) => {
+    res.render('mapa.ejs');
+});
+
 app.use(express.static('public'));
 
 app.listen(app.get('port'), () => {
