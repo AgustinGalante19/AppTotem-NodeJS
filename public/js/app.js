@@ -803,27 +803,9 @@ async function farm_de_turno() {
     setTimeout("farm_de_turno()", 1200000)
 }
 
-async function scrap_farmacias() {
-    const farmacias = await fetch(`http://localhost:5000/FarmaciasDeTurno/get`)
-        .then((response) => response.json())
-        .then((info) => {
-            return info;
-        });
+async function consultaAPItest() {
+    const req = await fetch('http://localhost:3000/tasks');
+    const res = await req.json();
 
-
-    const elemento = document.getElementById('fila1farmacias')
-    for(let i = 0; i < farmacias.length; i++){
-       elemento.innerHTML += `<p>${farmacias[i]}</p>` 
-    }
-}
-
-async function testAPInode(){
-    //http://localhost:5500/farmaciasdeturnovich
-    const request = await fetch('http://localhost:5500/farmaciasdeturnovich');
-    const response = await request.json();
-
-    console.log(response);
-
-    let elemento = document.getElementById('texto');
-    elemento.innerHTML = response;
+    console.log(res);
 }
