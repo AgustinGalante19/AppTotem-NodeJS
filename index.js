@@ -5,7 +5,6 @@ app.set('port', 5500);
 app.set('appName', 'App Totem')
 app.set('view engine', 'ejs')
 
-
 app.use(express.json())
 
 app.get('/', (req, res) => {

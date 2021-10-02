@@ -368,6 +368,8 @@ function focus_selector() {
         const btnRest = this.document.getElementById('btn_rest');
         const btnEstaciones = this.document.getElementById('btn_estaciones');
         const btnHoteles = this.document.getElementById('btn_hoteles');
+        const test = this.document.getElementById('atest')
+
 
         if (e.key === 'ArrowRight')
             posicion_actual += 1;
@@ -377,12 +379,17 @@ function focus_selector() {
             posicion_actual += 2;
         else if (e.key === 'ArrowUp')
             posicion_actual -= 2;
+        else if (e.key === 'l')
+            test.focus();
 
-        while (posicion_actual < 1 || posicion_actual > 6) {
+        while (posicion_actual <= -1 || posicion_actual > 6) {
             posicion_actual = 1;
         }
-
-        if (posicion_actual == 1)
+        console.log(posicion_actual);
+        
+        if (posicion_actual == 0)
+            test.focus();
+        else if (posicion_actual == 1)
             btnTiempo.focus();
         else if (posicion_actual == 2)
             btnMapa.focus();
@@ -394,6 +401,7 @@ function focus_selector() {
             btnEstaciones.focus();
         else if (posicion_actual == 6)
             btnHoteles.focus();
+
     });
 }
 
