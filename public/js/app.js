@@ -1,56 +1,8 @@
-function focus_selector() {
-    var posicion_actual = 1;
 
-    window.addEventListener("keydown", function (e) {
 
-        const btnTiempo = this.document.getElementById('btn_tiempo');
-        const btnMapa = this.document.getElementById('btn_mapa');
-        const btnFarmacias = this.document.getElementById('btn_farmacias');
-        const btnRest = this.document.getElementById('btn_rest');
-        const btnEstaciones = this.document.getElementById('btn_estaciones');
-        const btnHoteles = this.document.getElementById('btn_hoteles');
 
-        if (e.key === 'ArrowRight')
-            posicion_actual += 1;
-        else if (e.key === 'ArrowLeft')
-            posicion_actual -= 1;
-        else if (e.key === 'ArrowDown')
-            posicion_actual += 2;
-        else if (e.key === 'ArrowUp')
-            posicion_actual -= 2;
 
-        while (posicion_actual < 1 || posicion_actual > 6) {
-            posicion_actual = 1;
-        }
-
-        if (posicion_actual == 1)
-            btnTiempo.focus();
-        else if (posicion_actual == 2)
-            btnMapa.focus();
-        else if (posicion_actual == 3)
-            btnFarmacias.focus();
-        else if (posicion_actual == 4)
-            btnRest.focus();
-        else if (posicion_actual == 5)
-            btnEstaciones.focus();
-        else if (posicion_actual == 6)
-            btnHoteles.focus();
-    });
-}
-
-function iniciarmapa() {
-    var coord = { lat: -33.00132722506312, lng: -58.52235344110183 };
-    var map = new google.maps.Map(document.getElementById('map'), {
-        zoom: 17,
-        center: coord
-    });
-}
-
-function moveToLocation(lat, lng) {
-    var center = new google.maps.LatLng(lat, lng);
-    map.panTo(center);
-}
-
+//RElacionado al clima
 async function temperatura() {
 
     const response = await fetch('http://api.openweathermap.org/data/2.5/weather?lat=-33.001146355012644&lon=-58.523484474104954&appid=5ead772f5e978aba66947f30c55359f8');
@@ -102,53 +54,6 @@ async function temperatura_actual() {
     //20 minutos.
     setTimeout("temperatura()", 1200000);
 }
-
-function capitalizeFirstLetter(string) {
-    let aux;
-    aux = string.toLowerCase();
-    return aux.charAt(0).toUpperCase() + aux.slice(1);
-}
-
-function calcular_dia() {
-    const fecha322 = new Date();
-    let day = fecha322.getDay();
-    switch (day) {
-        case 0:
-            day = "Domingo";
-            break;
-
-        case 1:
-            day = "Lunes";
-            break;
-
-        case 2:
-            day = "Martes";
-            break;
-
-        case 3:
-            day = "Miércoles";
-            break;
-
-        case 4:
-            day = "Jueves";
-            break;
-
-        case 5:
-            day = "Viernes";
-            break;
-
-        case 6:
-            day = "Sabado";
-            break;
-    }
-    return day;
-}
-
-function ordenar_fecha(fecha) {
-    let aux = fecha.split('-');
-    return aux[2] + '/' + aux[1];
-}
-
 
 async function forecast() {
 
@@ -402,11 +307,101 @@ async function forecast() {
     setTimeout("forecast()", 1200000);
 }
 
+
+
+
+//utilidades
+function capitalizeFirstLetter(string) {
+    let aux;
+    aux = string.toLowerCase();
+    return aux.charAt(0).toUpperCase() + aux.slice(1);
+}
+
+function ordenar_fecha(fecha) {
+    let aux = fecha.split('-');
+    return aux[2] + '/' + aux[1];
+}
+
+function calcular_dia() {
+    const fecha322 = new Date();
+    let day = fecha322.getDay();
+    switch (day) {
+        case 0:
+            day = "Domingo";
+            break;
+
+        case 1:
+            day = "Lunes";
+            break;
+
+        case 2:
+            day = "Martes";
+            break;
+
+        case 3:
+            day = "Miércoles";
+            break;
+
+        case 4:
+            day = "Jueves";
+            break;
+
+        case 5:
+            day = "Viernes";
+            break;
+
+        case 6:
+            day = "Sabado";
+            break;
+    }
+    return day;
+}
+
+function focus_selector() {
+    var posicion_actual = 1;
+
+    window.addEventListener("keydown", function (e) {
+
+        const btnTiempo = this.document.getElementById('btn_tiempo');
+        const btnMapa = this.document.getElementById('btn_mapa');
+        const btnFarmacias = this.document.getElementById('btn_farmacias');
+        const btnRest = this.document.getElementById('btn_rest');
+        const btnEstaciones = this.document.getElementById('btn_estaciones');
+        const btnHoteles = this.document.getElementById('btn_hoteles');
+
+        if (e.key === 'ArrowRight')
+            posicion_actual += 1;
+        else if (e.key === 'ArrowLeft')
+            posicion_actual -= 1;
+        else if (e.key === 'ArrowDown')
+            posicion_actual += 2;
+        else if (e.key === 'ArrowUp')
+            posicion_actual -= 2;
+
+        while (posicion_actual < 1 || posicion_actual > 6) {
+            posicion_actual = 1;
+        }
+
+        if (posicion_actual == 1)
+            btnTiempo.focus();
+        else if (posicion_actual == 2)
+            btnMapa.focus();
+        else if (posicion_actual == 3)
+            btnFarmacias.focus();
+        else if (posicion_actual == 4)
+            btnRest.focus();
+        else if (posicion_actual == 5)
+            btnEstaciones.focus();
+        else if (posicion_actual == 6)
+            btnHoteles.focus();
+    });
+}
+
 function hora_actual() {
-    momentoActual = new Date();
-    hora = momentoActual.getHours();
-    minuto = momentoActual.getMinutes();
-    segundo = momentoActual.getSeconds();
+    let hoy = new Date();
+    let hora = hoy.getHours();
+    let minuto = hoy.getMinutes();
+    let segundo = hoy.getSeconds();
 
     str_segundo = new String(segundo);
     if (str_segundo.length == 1)
@@ -422,11 +417,14 @@ function hora_actual() {
 
     horaImprimible = hora + " : " + minuto;
 
-    let ele = document.getElementById('hora-navbar');
-    ele.innerHTML = `${horaImprimible}`;
+    let element_nav = document.getElementById('hora-navbar');
+    element_nav.innerHTML = `${horaImprimible}`;
     setTimeout("hora_actual()", 1000);
 }
 
+
+//No utilizado por ahora:
+//se utiliza en la funcion farm_de_turno;
 function limpiar_nombre_farmacia(string) {
 
     aux = string.replace(`<span class="street-address">`, " ")
@@ -435,12 +433,14 @@ function limpiar_nombre_farmacia(string) {
     return aux2;
 }
 
+//se utiliza en la funcion farm_de_turno;
 function organizar(string) {
     let resultado;
     resultado = string.split(",");
     return resultado[0];
 }
 
+//se utiliza en la funcion farm_de_turno;
 function abierto_consulta(string) {
     if (string) {
         return 'Abierto'
@@ -449,6 +449,8 @@ function abierto_consulta(string) {
     }
 }
 
+//farmacias abiertas(no en tiempo real)
+/*
 async function farm_de_turno() {
     const url = `http://localhost:5000/farmaciasGet/`;
     //farmacias id's 12/18 funcionan correctamente
@@ -465,7 +467,7 @@ async function farm_de_turno() {
     //Catedral: ChIJ5bfbGyuoupURSSnh0XzID-o     F
     //Del pueblo: ChIJVffBvooHsJUR0PrngQv2ZYw   F
 
-    //Boretto: ChIJSZoPU7kluZURY9M9PMk2YMM      no devuelve "open_now"  
+    //Boretto: ChIJSZoPU7kluZURY9M9PMk2YMM      no devuelve "open_now"
     //Vignola: ChIJReNulCWoupURo2vwh5fKVSU      no devuelve "open_now"
     //Diaz: ChIJ37H63SeoupURZoKuI2mNqIs     no devuelve "open_now"
     //Boulevard: ChIJo-2KWekHsJURYetuSTNRWpY        no devuelve "open_now"
@@ -802,10 +804,4 @@ async function farm_de_turno() {
 
     setTimeout("farm_de_turno()", 1200000)
 }
-
-async function consultaAPItest() {
-    const req = await fetch('http://localhost:3000/tasks');
-    const res = await req.json();
-
-    console.log(res);
-}
+*/

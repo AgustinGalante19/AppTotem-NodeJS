@@ -21,9 +21,9 @@ app.get('/mapa', (req, res) => {
     res.render('mapa.ejs');
 });
 
-app.get('/prueba', (req, res) => {
-    res.render('test.ejs')
-})
+app.get('/gualeactiva', (req, res) => {
+    res.render('ingresar_gualeactiva.ejs')
+});
 
 app.use(express.static('public'));
 
