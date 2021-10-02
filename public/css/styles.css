@@ -283,4 +283,6 @@ a:focus {
   align-items: center;
   align-content: center;
   max-width: 800px;
+  border: 2px solid black;
+  border-radius: 10px;
 }
