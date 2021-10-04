@@ -1,5 +1,28 @@
 
+async function rest_api() {
 
+
+    const contenedor_rest = document.getElementById('contenedor-rest')
+    const rest = await fetch(`http://localhost:5000/restaurantes`)
+        .then((response) => response.json())
+        .then((info) => {
+            return info;
+        });
+    console.log(rest);
+    for (let i = 0; i < rest.length; i++) {
+        contenedor_rest.innerHTML += `
+        <div class="crd-rest">
+            <div class=""><h3>${rest[i].nombre_restaurante}</h3></div>
+            <div class="crd-rest-body">
+                <img src="./img/mapmarker.png" width="25" height="25"></img><p class="text-crd-rest" style="display: inline">${rest[i].direccion_restaurante}</p>
+                <p class="text-crd-rest">${rest[i].descripcion_restaurante}</[p>
+            </div>
+        </div>
+        `
+    }
+
+
+}
 
 
 //RElacionado al clima
@@ -307,7 +330,12 @@ async function forecast() {
     setTimeout("forecast()", 1200000);
 }
 
+//Restaurantes
 
+async function agregar_restaurante(nombre, direccion, descripcion) {
+    const contenedor = document.getElementById('contenedor-rest');
+
+}
 
 
 //utilidades
@@ -386,7 +414,7 @@ function focus_selector() {
             posicion_actual = 1;
         }
         console.log(posicion_actual);
-        
+
         if (posicion_actual == 0)
             test.focus();
         else if (posicion_actual == 1)

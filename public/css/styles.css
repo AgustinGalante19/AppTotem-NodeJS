@@ -286,3 +286,23 @@ a:focus {
   border: 2px solid black;
   border-radius: 10px;
 }
+
+
+#contenedor-rest{
+  padding: 5px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+}
+.crd-rest{
+  padding: 10px;
+  margin: 5px auto 10px;
+  background-color: #F0F0F0;
+  border-radius: 5px;
+
+}
+.crd-rest-body{
+  margin-left: 10px;
+}
+.text-crd-rest{
+  text-indent: 50px;
+}

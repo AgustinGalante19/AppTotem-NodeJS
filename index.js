@@ -1,4 +1,4 @@
-import express from 'express';
+const express = require('express');
 const app = express();
 //Settings
 app.set('port', 5500);
@@ -22,6 +22,14 @@ app.get('/mapa', (req, res) => {
 
 app.get('/gualeactiva', (req, res) => {
     res.render('ingresar_gualeactiva.ejs')
+});
+
+app.get('/restaurantes', (req, res) => {
+    res.render('restaurantes.ejs')
+});
+
+app.get('/formulario_rest', (req, res) => {
+    res.render('formulario_restaurantes.ejs');
 });
 
 app.use(express.static('public'));
