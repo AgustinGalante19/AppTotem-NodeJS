@@ -5,7 +5,7 @@
   "main": "index.js",
   "type": "commonjs",
   "scripts": {
-    "dev": "npx nodemon index.js"
+    "dev": "nodemon index.js"
   },
   "repository": {
     "type": "git",
