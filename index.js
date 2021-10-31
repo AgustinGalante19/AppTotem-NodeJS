@@ -1,7 +1,7 @@
 const express = require('express');
 const app = express();
 //Settings
-app.set('port', 5500);
+app.set('port', process.env.port || 5000);
 app.set('appName', 'App Totem');
 app.set('view engine', 'ejs');
 app.use(express.json())

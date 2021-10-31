@@ -1,7 +1,5 @@
 
 async function rest_api() {
-
-
     // const contenedor_rest = document.getElementById('contenedor-rest')
     // const rest = await fetch(`http://localhost:5000/restaurantes`)
     //     .then((response) => response.json())
@@ -28,8 +26,7 @@ async function rest_api() {
     console.log(rest);
 }
 
-
-//RElacionado al clima
+//Relacionado al clima
 async function temperatura() {
 
     const response = await fetch('http://api.openweathermap.org/data/2.5/weather?lat=-33.001146355012644&lon=-58.523484474104954&appid=5ead772f5e978aba66947f30c55359f8');
@@ -333,14 +330,6 @@ async function forecast() {
     //ejecucion de la funcion cada 20 minutos.
     setTimeout("forecast()", 1200000);
 }
-
-//Restaurantes
-
-async function agregar_restaurante(nombre, direccion, descripcion) {
-    const contenedor = document.getElementById('contenedor-rest');
-
-}
-
 
 //utilidades
 function capitalizeFirstLetter(string) {

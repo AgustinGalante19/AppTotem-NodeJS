@@ -306,3 +306,9 @@ a:focus {
 .text-crd-rest{
   text-indent: 50px;
 }
+
+#footer-body{
+  background-color: #0d6efd;
+  color: white;
+  padding: 5px;
+}
