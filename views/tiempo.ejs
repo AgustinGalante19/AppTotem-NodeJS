@@ -6,10 +6,10 @@
         <title>Tiempo</title>
 </head>
 
-<body class="landing-page" onload="forecast(), hora_actual(), $('#onload').fadeOut(), temperatura_actual()">
+<body class="landing-page" style="background-image: url('img/bg_index.png');" onload="forecast(), hora_actual(), $('#onload').fadeOut(), temperatura_actual()">
     <%- include('../public/components/navigation') %>
         <div class="container-fluid">
-            <div class="container" id="contenedor-general">
+            <div class="container" style="margin-bottom: 50px;" id="contenedor-general">
 
                 <div class="row" style="margin-top: 50px;">
                     <div class="col-4" style=" display: flex; align-items: center; z-index: 100000;">
@@ -217,6 +217,7 @@
         </div>
         <%- include('../public/components/scripts') %>
         <%- include('../public/components/btn_atras') %>
+        <%- include('../public/components/footer') %>
 </body>
 
 </html>

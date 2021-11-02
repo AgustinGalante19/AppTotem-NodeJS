@@ -30,6 +30,18 @@ app.get('/tiempov2', (req, res) => {
     res.render('tiempov2.ejs');
 });
 
+app.get('/estaciones-de-servicio', (req, res) => {
+    res.render('estaciones_de_servicio.ejs')
+});
+
+app.get('/hoteles', (req, res) => {
+    res.render('hoteles.ejs');
+});
+
+app.get('/farmacias', (req, res) => {
+    res.render('farmacias.ejs');
+});
+
 app.get('/formulario_rest', (req, res) => {
     res.render('formulario_restaurantes.ejs');
 });

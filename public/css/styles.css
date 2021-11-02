@@ -2,7 +2,7 @@ html {
   box-sizing: border-box;
 }
 
-html, body{
+html, body {
   height: 100%;
 }
 
@@ -146,13 +146,13 @@ html, body{
 }
 
 /*fin loader css*/
+
 .landing-page {
   height: 100%;
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
   background-attachment: fixed;
-
 }
 
 #temp-actual-index, #tituloCard {
@@ -360,6 +360,10 @@ a:focus {
   padding: 5px;
 }
 
+footer {
+  margin-top: 10px;
+}
+
 .grid {
   display: grid;
   grid-template-columns: repeat(3, 33%);
@@ -387,11 +391,33 @@ a:focus {
   }
 }
 
-
-
-
-
-.contenedor-restaurantes{
+.contenedor-restaurantes {
   padding: 10px;
   margin: auto 100px;
+}
+
+#grid-tiempo {
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: auto;
+  gap: 2em;
+  padding: 4em;
+  justify-items: center;
+  background-color: #FFAE00;
+}
+
+div #grid-tiempo {
+  background-color: #fff;
+  border-radius: 10px;
+}
+
+.bg-2 {
+  background-image: url('https://activa.gualeguaychu.gov.ar/apps/activa/img/1.png');
+  background-color: #FFAE00
+}
+
+@media screen and (min-width: 800px){
+  div .card .mb3{
+    min-width: 120vh;
+  }
 }
