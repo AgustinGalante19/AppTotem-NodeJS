@@ -8,8 +8,7 @@ app.use(express.json())
 
 app.get('/', (req, res) => {
     res.render('index.ejs')
-}
-);
+});
 
 app.get('/tiempo', (req, res) => {
     res.render('tiempo.ejs')
@@ -27,9 +26,17 @@ app.get('/restaurantes', (req, res) => {
     res.render('restaurantes.ejs')
 });
 
+app.get('/tiempov2', (req, res) => {
+    res.render('tiempov2.ejs');
+});
+
 app.get('/formulario_rest', (req, res) => {
     res.render('formulario_restaurantes.ejs');
 });
+
+
+const test = require('./services/test');
+app.get('/testing', test.dataDetails);
 
 app.use(express.static('public'));
 

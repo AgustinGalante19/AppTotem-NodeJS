@@ -1,14 +1,18 @@
 html {
   box-sizing: border-box;
 }
+
+html, body{
+  height: 100%;
+}
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
-*,
-*:before,
-*:after {
+
+*, *:before, *:after {
   box-sizing: inherit;
 }
 
@@ -24,10 +28,12 @@ html {
   width: 80px;
   height: 80px;
 }
+
 .lds-roller div {
   animation: lds-roller 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
   transform-origin: 40px 40px;
 }
+
 .lds-roller div:after {
   content: " ";
   display: block;
@@ -38,62 +44,79 @@ html {
   background: #000;
   margin: -4px 0 0 -4px;
 }
+
 .lds-roller div:nth-child(1) {
   animation-delay: -0.036s;
 }
+
 .lds-roller div:nth-child(1):after {
   top: 63px;
   left: 63px;
 }
+
 .lds-roller div:nth-child(2) {
   animation-delay: -0.072s;
 }
+
 .lds-roller div:nth-child(2):after {
   top: 68px;
   left: 56px;
 }
+
 .lds-roller div:nth-child(3) {
   animation-delay: -0.108s;
 }
+
 .lds-roller div:nth-child(3):after {
   top: 71px;
   left: 48px;
 }
+
 .lds-roller div:nth-child(4) {
   animation-delay: -0.144s;
 }
+
 .lds-roller div:nth-child(4):after {
   top: 72px;
   left: 40px;
 }
+
 .lds-roller div:nth-child(5) {
   animation-delay: -0.18s;
 }
+
 .lds-roller div:nth-child(5):after {
   top: 71px;
   left: 32px;
 }
+
 .lds-roller div:nth-child(6) {
   animation-delay: -0.216s;
 }
+
 .lds-roller div:nth-child(6):after {
   top: 68px;
   left: 24px;
 }
+
 .lds-roller div:nth-child(7) {
   animation-delay: -0.252s;
 }
+
 .lds-roller div:nth-child(7):after {
   top: 63px;
   left: 17px;
 }
+
 .lds-roller div:nth-child(8) {
   animation-delay: -0.288s;
 }
+
 .lds-roller div:nth-child(8):after {
   top: 56px;
   left: 12px;
 }
+
 @keyframes lds-roller {
   0% {
     transform: rotate(0deg);
@@ -102,6 +125,7 @@ html {
     transform: rotate(360deg);
   }
 }
+
 .loader {
   background: white;
   width: 100%;
@@ -116,42 +140,49 @@ html {
   clip-path: circle(150% at 100% 0);
   transition: clip-path 0.8 ease-in-out;
 }
+
 .loader2 {
   clip-path: circle(0% at 100% 100%);
 }
 
 /*fin loader css*/
-
 .landing-page {
-  background-image: url("../img/bg_index.png");
+  height: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
   background-size: cover;
+  background-attachment: fixed;
+
 }
-#temp-actual-index,
-#tituloCard {
+
+#temp-actual-index, #tituloCard {
   font-weight: bold;
   font-size: 18px;
 }
+
 /*Cards*/
-#card1,
-#card2,
-#card3 {
+
+#card1, #card2, #card3 {
   margin-right: 50px;
 }
+
 #rowcard {
   margin-top: 25px;
 }
+
 #map {
   height: 700px;
   width: 100%;
 }
-#fila1,
-#fila2,
-#fila3 {
+
+#fila1, #fila2, #fila3 {
   margin-top: 20px;
 }
+
 #fila3 {
   margin-bottom: 30px;
 }
+
 #hora-navbar {
   margin: 10px;
   padding: 10px;
@@ -160,15 +191,12 @@ html {
   border-radius: 5px;
   font-weight: 300;
 }
-#btn_tiempo:focus,
-#btn_mapa:focus,
-#btn_farmacias:focus,
-#btn_rest:focus,
-#btn_estaciones:focus,
-#btn_hoteles:focus,
-#btn-atras:focus {
-  -ms-transform: scale(1.14); /* IE 9 */
-  -webkit-transform: scale(1.14); /* Safari 3-8 */
+
+#btn_tiempo:focus, #btn_mapa:focus, #btn_farmacias:focus, #btn_rest:focus, #btn_estaciones:focus, #btn_hoteles:focus, #btn-atras:focus {
+  -ms-transform: scale(1.14);
+  /* IE 9 */
+  -webkit-transform: scale(1.14);
+  /* Safari 3-8 */
   transform: scale(1.14);
 }
 
@@ -181,6 +209,7 @@ html {
   background-size: cover;
   border-radius: 10px;
 }
+
 .crd-header-tiempo {
   text-align: center;
   /*font-family: 'Roboto', sans-serif;*/
@@ -194,6 +223,7 @@ html {
   border-bottom: 1px solid white;
   margin-left: 15px;
 }
+
 .line2 {
   width: 200px;
   height: 1px;
@@ -204,10 +234,12 @@ html {
 td {
   text-align: center;
 }
+
 .table .table-borderless {
   width: 300px;
   height: 300px;
 }
+
 #contenedor-general {
   background-color: white;
   background-image: url("../img/bg_blue.jpg");
@@ -216,6 +248,7 @@ td {
   width: 70%;
   margin-bottom: 10px;
 }
+
 .tabla-secundaria {
   overflow-x: auto;
   width: 240px;
@@ -226,6 +259,7 @@ td {
   color: white;
   border-radius: 5px;
 }
+
 .tabla-secundaria2 {
   overflow-x: auto;
   width: 240px;
@@ -236,6 +270,7 @@ td {
   color: white;
   border-radius: 5px;
 }
+
 #tabla-actual2 {
   overflow-x: auto;
   width: 240px;
@@ -246,15 +281,20 @@ td {
   color: white;
   border-radius: 5px;
 }
+
 .txt-crd-tiempo {
   /*display: inline;*/
-  font-weight: 600 /*400?*/;
-  text-decoration: none /*underline?*/;
+  font-weight: 600/*400?*/
+  ;
+  text-decoration: none/*underline?*/
+  ;
 }
+
 #contenedor-farmacias {
   background-image: url("../img/bg_blue.jpg");
   border-radius: 15px;
 }
+
 .carta-farmacia {
   width: 16rem;
   min-height: 9rem;
@@ -266,18 +306,24 @@ td {
   color: white;
   margin: 10px;
 }
+
 .info-farmacia {
   margin-top: 15px;
 }
+
 .crd-farm-icon {
   width: 25px;
 }
+
 a:focus {
-  -ms-transform: scale(1.14); /* IE 9 */
-  -webkit-transform: scale(1.14); /* Safari 3-8 */
+  -ms-transform: scale(1.14);
+  /* IE 9 */
+  -webkit-transform: scale(1.14);
+  /* Safari 3-8 */
   transform: scale(1.14);
   font-weight: bold;
 }
+
 #contenedor-qr {
   background-color: white;
   align-items: center;
@@ -287,28 +333,65 @@ a:focus {
   border-radius: 10px;
 }
 
-
-#contenedor-rest{
+#contenedor-rest {
   padding: 5px;
   margin-bottom: 10px;
   border-radius: 5px;
 }
-.crd-rest{
+
+.crd-rest {
   padding: 10px;
   margin: 5px auto 10px;
   background-color: #F0F0F0;
   border-radius: 5px;
-
 }
-.crd-rest-body{
+
+.crd-rest-body {
   margin-left: 10px;
 }
-.text-crd-rest{
+
+.text-crd-rest {
   text-indent: 50px;
 }
 
-#footer-body{
+#footer-body {
   background-color: #0d6efd;
   color: white;
   padding: 5px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 33%);
+  grid-template-rows: auto;
+  gap: 1em;
+  padding: 3em;
+  /* align-items: center;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: auto;
+  gap: 5vh; */
+  justify-items: center;
+}
+
+.grid div {
+  background-color: #ecf0f1;
+}
+
+@media (max-width: 1030px) {
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(2, 50%);
+    grid-template-rows: auto;
+    gap: 1em;
+  }
+}
+
+
+
+
+
+.contenedor-restaurantes{
+  padding: 10px;
+  margin: auto 100px;
 }
