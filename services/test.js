@@ -7,8 +7,9 @@ const dataDetails = async (req, res) => {
 
 
     axios.get('http://nodetestagustin.ddns.net/tasks').then((response) => {
-        let json = CircularJSON.stringify(response.data);
-        res.status(200)
+        let resp = CircularJSON.stringify(response.data);
+        return res.send(resp), console.log(resp);;
+        
     }).catch((error) => {
         console.log(error);
     });

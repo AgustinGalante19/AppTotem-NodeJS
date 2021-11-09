@@ -52,6 +52,8 @@ app.get('/testing', test.dataDetails);
 
 app.use(express.static('public'));
 
-app.listen(app.get('port'), () => {
+const port = app.get('port');
+app.listen(port, () => {
     console.log(app.get('appName') + ' on port', app.get('port'));
+    console.log(`http://localhost:${port}`);
 });
