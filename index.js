@@ -42,6 +42,10 @@ app.get('/farmacias', (req, res) => {
     res.render('farmacias.ejs');
 });
 
+app.get('/tiemponuevo', (req, res) => {
+    res.render('newtiempo.ejs')
+});
+
 app.get('/formulario_rest', (req, res) => {
     res.render('formulario_restaurantes.ejs');
 });
