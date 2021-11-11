@@ -3,40 +3,44 @@
 
 <head>
     <%- include('../public/components/head') %>
-    <title>Mapa</title>
+        <title>Mapa</title>
 </head>
 
-<body class="landing-page" style="background-image: url('https://activa.gualeguaychu.gov.ar/apps/activa/img/1.png'); background-color: #FFAE00;">
+<body class="landing-page" style="background-image: url('img/bg_index.png'); background-color: #FFAE00;">
     <!--Navbar-->
     <%- include('../public/components/navigation') %>
-    <h3 style="background-color: white;"> Agregar marca de donde está ubicado.</h3>
-    <!--Mapa-->
-    <div class="container">
-        <a class="btn btn-primary" id="btn-atras" type="button" href="/" style="margin: 10px">
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                class="bi bi-arrow-left" viewBox="0 0 16 16">
-                <path fill-rule="evenodd"
-                    d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8z" />
-            </svg>
-            Volver</a>
-        <div id="map"></div>
-    </div>
-    <%- include('../public/components/scripts') %>
-    <script type="text/javascript" >
-        window.onload = hora_actual(), $('#onload').fadeOut()
-        function map_init() {
-            var coord = { lat: -33.00132722506312, lng: -58.52235344110183 };
-            var map = new google.maps.Map(document.getElementById('map'), {
-                zoom: 17,
-                center: coord
-            });
-        }
-    </script>
-    <%- include('../public/components/btn_atras') %>
-    <!--Api google maps-->
-    <script async
-        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBH3UJYBjdWqib5Z7XDeSorJTmYSKdGACs&callback=map_init">
-    </script>
+        <!--Mapa-->
+        <div class="container">
+            <a class="btn btn-primary" id="btn-atras" type="button" href="/" style="margin: 10px">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                    class="bi bi-arrow-left" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd"
+                        d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8z" />
+                </svg>
+                Volver</a>
+            <div id="map"></div>
+        </div>
+        <%- include('../public/components/scripts') %>
+            <script type="text/javascript">
+                window.onload = hora_actual(), $('#onload').fadeOut()
+                function map_init() {
+                    var coord = { lat: -33.00562408003438, lng: -58.51364718523803 };
+                    var map = new google.maps.Map(document.getElementById('map'), {
+                        zoom: 17,
+                        center: coord,
+                    });
+                    new google.maps.Marker({
+                        position: coord,
+                        map,
+                        title: "Hello World!",
+                    });
+                }
+            </script>
+            <%- include('../public/components/btn_atras') %>
+                <!--Api google maps-->
+                <script async
+                    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBH3UJYBjdWqib5Z7XDeSorJTmYSKdGACs&callback=map_init">
+                    </script>
 </body>
 
 </html>
