@@ -5,83 +5,85 @@
 
 <body class="landing-page" style="background-image: url('./img/bg_index.png');" onload="hora_actual(), temperatura()">
     <%- include('../public/components/navigation') %>
-        <div class="grid">
-            <div class="card" style="width: 18rem;">
-                <img src="img/cardtiempov1.png" class="card-img-top">
-                <div class="card-body" id="probando">
-                    <p id="temp-actual-index">
-                        <!--Listo.-->
-                    </p>
-                    <p class="card-text">Click para mas información sobre el tiempo en Gualeguaychú.</p>
-                    <a class="btn btn-primary" id="btn_tiempo" href="/tiempo">Ingresar</a>
+        <main>
+            <div class="grid">
+                <div class="card" style="width: 18rem;">
+                    <img src="img/cardtiempov1.png" class="card-img-top">
+                    <div class="card-body" id="probando">
+                        <p id="temp-actual-index">
+                            <!--Listo.-->
+                        </p>
+                        <p class="card-text">Click para mas información sobre el tiempo en Gualeguaychú.</p>
+                        <a class="btn btn-primary" id="btn_tiempo" href="/tiempo">Ingresar</a>
+                    </div>
+                </div>
+    
+    
+                <div class="card" style="width: 18rem;">
+                    <img src="img/cardmapv2.png" class="card-img-top">
+                    <div class="card-body">
+                        <p id="tituloCard">Mapa
+                            <!--Listo.-->
+                        </p>
+                        <p class="card-text">Click para ver un mapa de Gualeguaychú.</p>
+                        <a class="btn btn-primary" id="btn_mapa" href="/mapa">Ingresar</a>
+                    </div>
+                </div>
+    
+                <div class="card" style="width: 18rem;">
+                    <img src="img/cardfarmaciasv1.png" class="card-img-top">
+                    <div class="card-body">
+                        <p id="tituloCard">Farmacias de turno
+                            <script>
+                    //code...?
+                            </script>
+                        </p>
+                        <p class="card-text">Click para ver la farmacias de turno.</p>
+                        <a class="btn btn-primary" id="btn_farmacias" href="/farmacias">Ingresar</a>
+                    </div>
+                </div>
+    
+                <div class="card" style="width: 18rem;">
+                    <img src="img/rest-card.jpg" class="card-img-top">
+                    <div class="card-body">
+                        <p id="tituloCard">Restaurantes
+                            <script>
+                    //code...?
+                            </script>
+                        </p>
+                        <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                        <a class="btn btn-primary" id="btn_rest" href="/restaurantes">Ingresar</a>
+                    </div>
+                </div>
+    
+                <div class="card" style="width: 18rem;">
+                    <img src="img/estacion-card.jpg" class="card-img-top">
+                    <div class="card-body">
+                        <p id="tituloCard">Estaciones de servicio
+                            <script>
+                      //code...?
+                            </script>
+                        </p>
+                        <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                        <a class="btn btn-primary" id="btn_estaciones" href="/estaciones-de-servicio">Ingresar</a>
+                    </div>
+                </div>
+    
+    
+                <div class="card" style="width: 18rem;">
+                    <img src="img/hotel-card.jpg" class="card-img-top">
+                    <div class="card-body">
+                        <p id="tituloCard">Hoteles
+                            <script>
+                    //code...?
+                            </script>
+                        </p>
+                        <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                        <a class="btn btn-primary" id="btn_hoteles" href="/hoteles">Ingresar</a>
+                    </div>
                 </div>
             </div>
-
-
-            <div class="card" style="width: 18rem;">
-                <img src="img/cardmapv2.png" class="card-img-top">
-                <div class="card-body">
-                    <p id="tituloCard">Mapa
-                        <!--Listo.-->
-                    </p>
-                    <p class="card-text">Click para ver un mapa de Gualeguaychú.</p>
-                    <a class="btn btn-primary" id="btn_mapa" href="/mapa">Ingresar</a>
-                </div>
-            </div>
-
-            <div class="card" style="width: 18rem;">
-                <img src="img/cardfarmaciasv1.png" class="card-img-top">
-                <div class="card-body">
-                    <p id="tituloCard">Farmacias de turno
-                        <script>
-                //code...?
-                        </script>
-                    </p>
-                    <p class="card-text">Click para ver la farmacias de turno.</p>
-                    <a class="btn btn-primary" id="btn_farmacias" href="/farmacias">Ingresar</a>
-                </div>
-            </div>
-
-            <div class="card" style="width: 18rem;">
-                <img src="img/rest-card.jpg" class="card-img-top">
-                <div class="card-body">
-                    <p id="tituloCard">Restaurantes
-                        <script>
-                //code...?
-                        </script>
-                    </p>
-                    <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-                    <a class="btn btn-primary" id="btn_rest" href="/restaurantes">Ingresar</a>
-                </div>
-            </div>
-
-            <div class="card" style="width: 18rem;">
-                <img src="img/estacion-card.jpg" class="card-img-top">
-                <div class="card-body">
-                    <p id="tituloCard">Estaciones de servicio
-                        <script>
-                  //code...?
-                        </script>
-                    </p>
-                    <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-                    <a class="btn btn-primary" id="btn_estaciones" href="/estaciones-de-servicio">Ingresar</a>
-                </div>
-            </div>
-
-
-            <div class="card" style="width: 18rem;">
-                <img src="img/hotel-card.jpg" class="card-img-top">
-                <div class="card-body">
-                    <p id="tituloCard">Hoteles
-                        <script>
-                //code...?
-                        </script>
-                    </p>
-                    <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-                    <a class="btn btn-primary" id="btn_hoteles" href="/hoteles">Ingresar</a>
-                </div>
-            </div>
-        </div>
+        </main>
         <%- include('../public/components/footer.ejs') %>
         <%- include('../public/components/scripts') %>
 </body>
