@@ -2,19 +2,19 @@ const Router = require('router');
 const router = Router();
 
 router.get('/formulario/farmacia', (req, res) => {
-    res.render('./forms/farmacia.ejs')
+    res.render('farmacia.ejs')
 });
 
 router.get('/formulario/hotel', (req, res) => {
-    res.render('./forms/hote.ejs');
+    res.render('hote.ejs');
 });
 
 router.get('/formulario/restaurante', (req, res) => {
-    res.render('./forms/restaurante.ejs');
+    res.render('restaurante.ejs');
 });
 
-router.get('/formulario/estacionesde-servicio', (req, res) => {
-    res.render('./forms/estacion.ejs');
+router.get('/formulario/estaciones-de-servicio', (req, res) => {
+    res.render('estacion.ejs');
 });
 
 module.exports = router;

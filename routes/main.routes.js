@@ -1,6 +1,4 @@
 const  Router  = require('router');
-
-
 const router = Router();
 
 router.get('/', (req, res) => {
