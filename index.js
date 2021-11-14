@@ -1,59 +1,17 @@
 const express = require('express');
 const app = express();
 
+const mainRoutes = require('./routes/main.routes');
+const formRoutes = require('./routes/forms.routes');
 //Settings
 app.set('port', process.env.port || 5000);
 app.set('appName', 'App Totem');
 app.set('view engine', 'ejs');
 app.use(express.json())
 
-app.get('/', (req, res) => {
-    res.render('index.ejs')
-});
-
-app.get('/tiempo', (req, res) => {
-    res.render('tiempo.ejs')
-});
-
-app.get('/mapa', (req, res) => {
-    res.render('mapa.ejs');
-});
-
-app.get('/gualeactiva', (req, res) => {
-    res.render('ingresar_gualeactiva.ejs')
-});
-
-app.get('/restaurantes', (req, res) => {
-    res.render('restaurantes.ejs')
-});
-
-app.get('/tiempov2', (req, res) => {
-    res.render('tiempov2.ejs');
-});
-
-app.get('/estaciones-de-servicio', (req, res) => {
-    res.render('estaciones_de_servicio.ejs')
-});
-
-app.get('/hoteles', (req, res) => {
-    res.render('hoteles.ejs');
-});
-
-app.get('/farmacias', (req, res) => {
-    res.render('farmacias.ejs');
-});
-
-app.get('/tiemponuevo', (req, res) => {
-    res.render('newtiempo.ejs')
-});
-
-app.get('/formulario_rest', (req, res) => {
-    res.render('formulario_restaurantes.ejs');
-});
-
-
-// const test = require('./services/test');
-// app.get('/testing', test.dataDetails);
+//Routes
+app.use(mainRoutes);
+app.use(formRoutes);
 const requestsXD = require('./services/requests')
 app.get('/testing/:id', requestsXD.getFarmaciaByID);
 
