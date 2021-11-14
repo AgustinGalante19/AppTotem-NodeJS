@@ -22,7 +22,7 @@
         </div>
         <%- include('../public/components/scripts') %>
             <script type="text/javascript">
-                window.onload = hora_actual(), $('#onload').fadeOut()
+                window.onload = $('#onload').fadeOut()
                 function map_init() {
                     var coord = { lat: -33.00562408003438, lng: -58.51364718523803 };
                     var map = new google.maps.Map(document.getElementById('map'), {

@@ -202,7 +202,6 @@ html, body {
 
 .crd-tiempo-actual {
   color: white;
-  /*font-family: 'Roboto', sans-serif;*/
   width: 300px;
   height: 380px;
   background-image: url("https://activa.gualeguaychu.gov.ar/apps/activa/img/bg_azul.png");
@@ -370,11 +369,6 @@ footer {
   grid-template-rows: auto;
   gap: 1em;
   padding: 3em;
-  /* align-items: center;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: auto;
-  gap: 5vh; */
   justify-items: center;
 }
 
@@ -449,4 +443,10 @@ div #grid-tiempo {
   div .card .mb3 {
     min-width: 120vh;
   }
+}
+
+.img-fluid {
+  width: 100%;
+  height: 15vw;
+  object-fit: cover;
 }

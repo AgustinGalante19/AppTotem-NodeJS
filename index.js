@@ -1,5 +1,6 @@
 const express = require('express');
 const app = express();
+
 //Settings
 app.set('port', process.env.port || 5000);
 app.set('appName', 'App Totem');
@@ -51,8 +52,10 @@ app.get('/formulario_rest', (req, res) => {
 });
 
 
-const test = require('./services/test');
-app.get('/testing', test.dataDetails);
+// const test = require('./services/test');
+// app.get('/testing', test.dataDetails);
+const requestsXD = require('./services/requests')
+app.get('/testing/:id', requestsXD.getFarmaciaByID);
 
 app.use(express.static('public'));
 
