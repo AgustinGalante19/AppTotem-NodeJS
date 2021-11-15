@@ -6,7 +6,7 @@
         <title>Mapa</title>
 </head>
 
-<body class="landing-page" style="background-image: url('img/bg_index.png'); background-color: #FFAE00;">
+<body class="landing-page" style="background-image: url('img/bg_index.png'); background-color: #FFAE00;" onload="hora_actual()">
     <!--Navbar-->
     <%- include('../public/components/navigation') %>
         <main>
@@ -22,9 +22,7 @@
                 <div id="map"></div>
             </div>
         </main>
-        <%- include('../public/components/scripts') %>
         <script type="text/javascript">
-            window.onload = $('#onload').fadeOut()
             function map_init() {
                 var coord = { lat: -33.00562408003438, lng: -58.51364718523803 };
                 var map = new google.maps.Map(document.getElementById('map'), {
@@ -38,12 +36,13 @@
                 });
             }
         </script>
-        <%- include('../public/components/btn_atras') %>
-        <%- include('../public/components/footer') %>
         <!--Api google maps-->
         <script async
             src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBH3UJYBjdWqib5Z7XDeSorJTmYSKdGACs&callback=map_init">
         </script>
+    <%- include('../public/components/scripts') %>
+    <%- include('../public/components/btn_atras') %>
+    <%- include('../public/components/footer') %>
 </body>
 
 </html>
