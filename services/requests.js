@@ -1,28 +1,28 @@
 const axios = require('axios');
-const CircularJSON = require('circular-json')
+//const CircularJSON = require('circular-json');
 
-async function getFarmacias(req, res) {
+const addEstacion = async (req, res) => {
+    var objEstacion = {
+        estacion_nombre: req.body.nombre,
+        estacion_direccion: req.body.direccion,
+        estacion_telefono: req.body.telefono,
+        estacion_imageUrl: req.body.imageUrl
+    }
+    axios({
+        method: 'post',
+        url: 'http://api-totem.ddns.net/api/estaciones_de_servicio',
+        data: objEstacion
+    })
+        .then(function (response) {
+            console.log(response.status);
+        })
+        .catch(function (error) {
+            console.log(error);
+        });
 
-    axios.get('http://api-totem.ddns.net/api/hoteles').then((response) => {
-        //let resp = CircularJSON.stringify(response.data);
-        //return res.send(resp), console.log(resp);;
-        return res.send(CircularJSON.stringify(response.data));
-    }).catch((error) => {
-        console.log(error);
-    });
-}
-
-async function getFarmaciaByID(req, res) {
-    const id = req.params.id;
-    axios.get(`http://api-totem.ddns.net/api/hoteles/${id}`).then((response) => {
-        console.log(id);
-        return res.send(CircularJSON.stringify(response.data));
-    }).catch((error) => {
-        console.log(error);
-    });
+    res.redirect('/estaciones-de-servicio');
 }
 
 module.exports = {
-    getFarmacias,
-    getFarmaciaByID
+    addEstacion
 }

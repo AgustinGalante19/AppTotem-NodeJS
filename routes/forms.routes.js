@@ -14,7 +14,9 @@ router.get('/formulario/restaurante', (req, res) => {
 });
 
 router.get('/formulario/estaciones-de-servicio', (req, res) => {
-    res.render('estacion.ejs');
+    res.render('estaciones_de_servicioForm.ejs');
 });
+
+
 
 module.exports = router;

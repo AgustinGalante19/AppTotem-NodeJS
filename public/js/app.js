@@ -1,29 +1,31 @@
+async function renderizarEstaciones() {
+    const contenedor = document.getElementById('estaciones-contenedor');
 
-async function rest_api() {
-    // const contenedor_rest = document.getElementById('contenedor-rest')
-    // const rest = await fetch(`http://localhost:5000/restaurantes`)
-    //     .then((response) => response.json())
-    //     .then((info) => {
-    //         return info;
-    //     });
-    // console.log(rest);
-    // for (let i = 0; i < rest.length; i++) {
-    //     contenedor_rest.innerHTML += `
-    //     <div class="crd-rest">
-    //         <div class=""><h3>${rest[i].nombre_restaurante}</h3></div>
-    //         <div class="crd-rest-body">
-    //             <img src="./img/mapmarker.png" width="25" height="25"></img><p class="text-crd-rest" style="display: inline">${rest[i].direccion_restaurante}</p>
-    //             <p class="text-crd-rest">${rest[i].descripcion_restaurante}</[p>
-    //         </div>
-    //     </div>
-    //     `
-    // }
-    const rest = await fetch(`http://localhost:5000/`)
+    const res = await fetch(`http://api-totem.ddns.net/api/estaciones_de_servicio`)
         .then((response) => response.json())
         .then((info) => {
             return info;
-    });
-    console.log(rest);
+        });
+
+    for (let i = 0; i < res.length; i++) {
+        contenedor.innerHTML += `
+        <div class="card mb-3" style="max-width: 120vh;">
+            <div class="row g-0">
+                <div class="col-md-4">
+                    <img src="${res[i].estacion_imageUrl}" class="img-fluid rounded-start" alt="...">
+                </div>
+                <div class="col-md-8">
+                    <div class="card-body">
+                        <h5 class="card-title">${res[i].estacion_nombre}</h5>
+                        <p class="card-text">${res[i].estacion_id}</p>
+                        <p class="card-text">${res[i].estacion_direccion}</p>
+                        <p class="card-text">${res[i].estacion_telefono}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        `
+    }
 }
 
 //Relacionado al clima
