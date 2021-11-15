@@ -16,10 +16,10 @@
                 <div class="card">
                     <div class="card-header text-center text-white"
                         style="font-weight: bold; font-size: 18px; background-color: #007CFF;">
-                        Estación de servicio
+                        Hotel
                     </div>
                     <div class="card-body">
-                        <form id="form-estacion" method="post" action="/subir-estacion">
+                        <form id="form-hotel" method="post" action="/subir-hotel">
                             <div class="mb-3">
                                 <label class="form-label">Nombre:</label>
                                 <input type="text" class="form-control" name="nombre" id="nombre">
@@ -35,6 +35,10 @@
                             <div class="mb-3">
                                 <label class="form-label">Url de la imagen:</label>
                                 <input type="text" class="form-control" name="imageUrl" id="imageUrl">
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">Descripción</label>
+                                <textarea name="descripcion" id="descripcion" class="form-control" cols="30" rows="5"></textarea>
                             </div>
                             <button type="submit" class="btn btn-primary">Listo</button>
                         </form>

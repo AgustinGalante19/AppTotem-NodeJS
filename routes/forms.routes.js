@@ -6,7 +6,7 @@ router.get('/formulario/farmacia', (req, res) => {
 });
 
 router.get('/formulario/hotel', (req, res) => {
-    res.render('hote.ejs');
+    res.render('hotelesForm.ejs');
 });
 
 router.get('/formulario/restaurante', (req, res) => {
