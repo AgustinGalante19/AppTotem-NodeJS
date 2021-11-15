@@ -28,6 +28,36 @@ async function renderizarEstaciones() {
     }
 }
 
+async function renderizarHoteles() {
+    const contenedor = document.getElementById('hoteles-contenedor');
+    const res = await fetch('http://api-totem.ddns.net/api/hoteles')
+        .then((response) => response.json())
+        .then((info) => {
+            return info
+        });
+
+    for (let i = 0; i < res.length; i++) {
+        contenedor.innerHTML += `
+            <div class="card mb-3" style="max-width: 120vh;">
+                <div class="row g-0">
+                    <div class="col-md-4">
+                        <img src="${res[i].hotel_imageUrl}" class="img-fluid rounded-start" alt="...">
+                    </div>
+                    <div class="col-md-8">
+                        <div class="card-body">
+                            <h5 class="card-title">${res[i].hotel_nombre}</h5>
+                            <p class="card-text">${res[i].hotel_id}</p>
+                            <p class="card-text">${res[i].hotel_direccion}</p>
+                            <p class="card-text">${res[i].hotel_telefono}</p>
+                            <p class="card-text">${res[i].hotel_description}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        `
+    }
+}
+
 //Relacionado al clima
 async function temperatura() {
 
