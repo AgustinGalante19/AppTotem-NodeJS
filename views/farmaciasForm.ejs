@@ -4,7 +4,7 @@
 <head>
     <base href="/">
     <%- include('../public/components/head') %>
-        <title>Restaurantes recomendados</title>
+        <title>Farmacias</title>
 </head>
 
 <body class="landing-page"
@@ -16,10 +16,10 @@
                 <div class="card">
                     <div class="card-header text-center text-white"
                         style="font-weight: bold; font-size: 18px; background-color: #007CFF;">
-                        Restaurante
+                        Farmacia
                     </div>
                     <div class="card-body">
-                        <form id="form-estacion" method="post" action="/subir-restaurante">
+                        <form id="form-estacion" method="post" action="/subir-farmacia">
                             <div class="mb-3">
                                 <label class="form-label">Nombre:</label>
                                 <input type="text" class="form-control" name="nombre" id="nombre">
@@ -42,21 +42,18 @@
                                     <label class="form-label">Lunes a Viernes</label>
                                 </div>
                                 <div class="col text-center">
-                                    <input type="text-center" class="form-control" name="lun_vie_ha1M"
-                                        placeholder="00:00" aria-label="First name">
+                                    <input type="text-center" class="form-control" name="lun_vie_ha1M" placeholder="00:00"
+                                        aria-label="First name">
                                 </div>
                                 <div class="col text-center">
-                                    <input type="text" class="form-control" name="lun_vie_hc1M" placeholder="00:00"
-                                        aria-label="Last name">
+                                    <input type="text" class="form-control" name="lun_vie_hc1M" placeholder="00:00" aria-label="Last name">
                                 </div>
                                 -
                                 <div class="col">
-                                    <input type="text" class="form-control" name="lun_vie_ha1T" placeholder="00:00"
-                                        aria-label="First name">
+                                    <input type="text" class="form-control" name="lun_vie_ha1T" placeholder="00:00" aria-label="First name">
                                 </div>
                                 <div class="col">
-                                    <input type="text" class="form-control" name="lun_vie_hc1T" placeholder="00:00"
-                                        aria-label="Last name">
+                                    <input type="text" class="form-control" name="lun_vie_hc1T" placeholder="00:00" aria-label="Last name">
                                 </div>
                             </div>
                             <div class="row" style="margin-bottom: 10px;">

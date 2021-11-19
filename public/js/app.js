@@ -1,7 +1,7 @@
-async function renderizarEstaciones() {
-    const contenedor = document.getElementById('estaciones-contenedor');
+async function renderizarRestaurantes() {
+    const contenedor = document.getElementById('contenedor');
 
-    const res = await fetch(`http://api-totem.ddns.net/api/estaciones_de_servicio`)
+    const res = await fetch(`http://api-totem.ddns.net/api/restaurantes`)
         .then((response) => response.json())
         .then((info) => {
             return info;
@@ -9,17 +9,126 @@ async function renderizarEstaciones() {
 
     for (let i = 0; i < res.length; i++) {
         contenedor.innerHTML += `
-        <div class="card mb-3" style="max-width: 120vh;">
+        <div class="card mb-3" style="max-width: 120vh; border: 1px solid black; margin: 5px; padding: 10px; margin: 10px">
+            <div class="row g-0">
+                <div class="col-md-4">
+                    <img src="${res[i].rest_imageUrl}" class="img-fluid rounded-start" alt="...">
+                </div>
+                <div class="col-md-8">
+                    <div class="card-body">
+                        <h4 class="card-title">${res[i].rest_nombre}</h4>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-geo-alt-fill" viewBox="0 0 16 16">
+                            <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10zm0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6z"/>
+                        </svg>                  
+                        
+                        <p class="card-text" style="display: inline-block">${res[i].rest_direccion}</p>
+                        <p class="card-text" style="display: block">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-calendar" viewBox="0 0 16 16">
+                                <path d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4H1z"/>
+                            </svg>
+                            Lunes a Viernes ${res[i].lun_vie_ha1M} - ${res[i].lun_vie_hc1M} - ${res[i].lun_vie_ha1T} - ${res[i].lun_vie_hc1T}
+                        </p>
+                        <p class="card-text" style="display: block">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-calendar" viewBox="0 0 16 16">
+                                <path d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4H1z"/>
+                            </svg>
+                            Sábado y Domingo ${res[i].sab_dom_ha2M} - ${res[i].sab_dom_hc2M} - ${res[i].lun_vie_ha1T} - ${res[i].sab_dom_hc2T}
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        `
+    }
+}
+
+async function renderizarFarmacias() {
+    const contenedor = document.getElementById('contenedor');
+
+    const res = await fetch(`http://api-totem.ddns.net/api/farmacias`)
+        .then((response) => response.json())
+        .then((info) => {
+            return info;
+        });
+
+    for (let i = 0; i < res.length; i++) {
+        contenedor.innerHTML += `
+        <div class="card mb-3" style="max-width: 120vh; border: 1px solid black; margin: 5px; padding: 10px; margin: 10px">
+            <div class="row g-0">
+                <div class="col-md-4">
+                    <img src="${res[i].farmacia_imageUrl}" class="img-fluid rounded-start" alt="...">
+                </div>
+                <div class="col-md-8">
+                    <div class="card-body">
+                        <h4 class="card-title">${res[i].farmacia_nombre}</h4>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-geo-alt-fill" viewBox="0 0 16 16">
+                            <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10zm0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6z"/>
+                        </svg>                  
+                        
+                        <p class="card-text" style="display: inline-block">${res[i].farmacia_direccion}</p>
+                        <p class="card-text">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-telephone-fill" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd" d="M1.885.511a1.745 1.745 0 0 1 2.61.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.678.678 0 0 0 .178.643l2.457 2.457a.678.678 0 0 0 .644.178l2.189-.547a1.745 1.745 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.634 18.634 0 0 1-7.01-4.42 18.634 18.634 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877L1.885.511z"/>
+                        </svg>
+                            ${res[i].farmacia_telefono}
+                        </p>
+                        <p class="card-text" style="display: block">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-calendar" viewBox="0 0 16 16">
+                                <path d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4H1z"/>
+                            </svg>
+                            Lunes a Viernes ${res[i].lun_vie_ha1M} - ${res[i].lun_vie_hc1M} - ${res[i].lun_vie_ha1T} - ${res[i].lun_vie_hc1T}
+                        </p>
+                        <p class="card-text" style="display: block">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-calendar" viewBox="0 0 16 16">
+                                <path d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4H1z"/>
+                            </svg>
+                            Sábado y Domingo ${res[i].sab_dom_ha2M} - ${res[i].sab_dom_hc2M} - ${res[i].lun_vie_ha1T} - ${res[i].sab_dom_hc2T}
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        `
+    }
+}
+
+
+async function renderizarEstaciones() {
+    const contenedor = document.getElementById('contenedor');
+
+    const res = await fetch(`http://api-totem.ddns.net/api/estaciones_de_servicio`)
+        .then((response) => response.json())
+        .then((info) => {
+            return info;
+        });
+    for (let i = 0; i < res.length; i++) {
+        contenedor.innerHTML += `
+        <div class="card mb-3" style="max-width: 120vh; border: 1px solid black; margin: 5px; padding: 10px; margin: 10px">
             <div class="row g-0">
                 <div class="col-md-4">
                     <img src="${res[i].estacion_imageUrl}" class="img-fluid rounded-start" alt="...">
                 </div>
                 <div class="col-md-8">
                     <div class="card-body">
-                        <h5 class="card-title">${res[i].estacion_nombre}</h5>
-                        <p class="card-text">${res[i].estacion_id}</p>
-                        <p class="card-text">${res[i].estacion_direccion}</p>
-                        <p class="card-text">${res[i].estacion_telefono}</p>
+                        <h4 class="card-title">${res[i].estacion_nombre}</h4>
+                        <p class="card-text">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-geo-alt-fill" viewBox="0 0 16 16">
+                            <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10zm0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6z"/>
+                        </svg>
+                            ${res[i].estacion_direccion}
+                        </p>
+                        <p class="card-text">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-telephone-fill" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd" d="M1.885.511a1.745 1.745 0 0 1 2.61.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.678.678 0 0 0 .178.643l2.457 2.457a.678.678 0 0 0 .644.178l2.189-.547a1.745 1.745 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.634 18.634 0 0 1-7.01-4.42 18.634 18.634 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877L1.885.511z"/>
+                        </svg>
+                            ${res[i].estacion_telefono}
+                        </p>
+                        <p class="card-text">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-calendar" viewBox="0 0 16 16">
+                                <path d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4H1z"/>
+                            </svg>
+                        Abierto las 24 horas.
+                        </p>
                     </div>
                 </div>
             </div>
@@ -29,7 +138,7 @@ async function renderizarEstaciones() {
 }
 
 async function renderizarHoteles() {
-    const contenedor = document.getElementById('hoteles-contenedor');
+    const contenedor = document.getElementById('contenedor');
     const res = await fetch('http://api-totem.ddns.net/api/hoteles')
         .then((response) => response.json())
         .then((info) => {
@@ -38,18 +147,26 @@ async function renderizarHoteles() {
 
     for (let i = 0; i < res.length; i++) {
         contenedor.innerHTML += `
-            <div class="card mb-3" style="max-width: 120vh;">
+            <div class="card mb-3" style="max-width: 120vh; border: 1px solid black; margin: 5px; padding: 10px; margin: 10px">
                 <div class="row g-0">
                     <div class="col-md-4">
                         <img src="${res[i].hotel_imageUrl}" class="img-fluid rounded-start" alt="...">
                     </div>
                     <div class="col-md-8">
                         <div class="card-body">
-                            <h5 class="card-title">${res[i].hotel_nombre}</h5>
-                            <p class="card-text">${res[i].hotel_id}</p>
-                            <p class="card-text">${res[i].hotel_direccion}</p>
-                            <p class="card-text">${res[i].hotel_telefono}</p>
-                            <p class="card-text">${res[i].hotel_description}</p>
+                            <h4 class="card-title">${res[i].hotel_nombre}</h4>
+                            <p class="card-text">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-geo-alt-fill" viewBox="0 0 16 16">
+                                <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10zm0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6z"/>
+                            </svg>
+                                ${res[i].hotel_direccion}
+                            </p>
+                            <p class="card-text">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-telephone-fill" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd" d="M1.885.511a1.745 1.745 0 0 1 2.61.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.678.678 0 0 0 .178.643l2.457 2.457a.678.678 0 0 0 .644.178l2.189-.547a1.745 1.745 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.634 18.634 0 0 1-7.01-4.42 18.634 18.634 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877L1.885.511z"/>
+                            </svg>
+                                ${res[i].hotel_telefono}
+                            </p>
                         </div>
                     </div>
                 </div>
