@@ -21,10 +21,6 @@ router.get('/restaurantes', (req, res) => {
     res.render('restaurantes.ejs')
 });
 
-router.get('/tiempov2', (req, res) => {
-    res.render('tiempov2.ejs');
-});
-
 router.get('/estaciones-de-servicio', (req, res) => {
     res.render('estaciones_de_servicio.ejs')
 });
@@ -35,10 +31,6 @@ router.get('/hoteles', (req, res) => {
 
 router.get('/farmacias', (req, res) => {
     res.render('farmacias.ejs');
-});
-
-router.get('/tiemponuevo', (req, res) => {
-    res.render('newtiempo.ejs')
 });
 
 module.exports =  router;

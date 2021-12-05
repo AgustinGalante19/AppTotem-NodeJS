@@ -285,10 +285,11 @@ async function forecast() {
     let dia_numero3 = new Date(data.list[20].dt_txt);
     let dia_numero4 = new Date(data.list[28].dt_txt);
     let dia_numero5 = new Date(data.list[36].dt_txt);
+
     //dias de la semana
     var dias_semana = { weekday: 'long' };
-    //conversion
 
+    //conversion
     let d1_conv = new Intl.DateTimeFormat('es-ES', dias_semana).format(dia_numero1);
     let d2_conv = new Intl.DateTimeFormat('es-ES', dias_semana).format(dia_numero2);
     let d3_conv = new Intl.DateTimeFormat('es-ES', dias_semana).format(dia_numero3);
@@ -325,8 +326,6 @@ async function forecast() {
     let humedad_diaE3 = document.getElementById("humedad-dia3");
     let humedad_diaE4 = document.getElementById("humedad-dia4");
     let humedad_diaE5 = document.getElementById("humedad-dia5");
-
-
 
     //Declaracion estado dia 12:00 hs.
     let dia_1Desc = document.getElementById("dia1-desc");
